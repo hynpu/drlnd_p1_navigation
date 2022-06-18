@@ -1,5 +1,6 @@
 # Project 1 (Banana Navigation) for Udacity Deep Reinforcement Learning Nanodegree
 The project 1 solution for Udacity Deep Reinforcement Learning nano degree.
+![alt banana env](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/dqnAgentAnimation.gif)
 
 # Goal
 For this project, train an agent to navigate (and collect bananas!) in a large, square world.
@@ -11,6 +12,7 @@ A gif showing the navigation and collection of bananas.
 # Approach
 
 The project follows the following steps to build and train the agent using DQN.
+![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/reinforcement_learning_diagram.jpg)
 
 ## 1. The state and action space of this environment
 
@@ -22,6 +24,8 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 * 3 - turn right.
 
 A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. Thus, the goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas. 
+
+![alt the diagrame of NN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/v2-b53d6e5b3e1c8b24c273c1ab09cdb75e_720w.jpg)
 
 ## 2. Explore the environment by taking random actions
 
@@ -50,12 +54,18 @@ Once this cell is executed, you will watch the agent's performance, if it select
 
 The DeepMind system used a deep convolutional neural network, with layers of tiled convolutional filters to mimic the effects of receptive fields. Reinforcement learning is unstable or divergent when a nonlinear function approximator such as a neural network is used to represent Q. This instability comes from the correlations present in the sequence of observations, the fact that small updates to Q may significantly change the policy of the agent and the data distribution, and the correlations between Q and the target values.
 
+![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_nm0lt3oobxdBHTMACUZ-cg.png)
+
 The technique used experience replay, a biologically inspired mechanism that uses a random sample of prior actions instead of the most recent action to proceed. This removes correlations in the observation sequence and smooths changes in the data distribution. Iterative updates adjust Q towards target values that are only periodically updated, further reducing correlations with the target.
 
 Because the future maximum approximated action value in Q-learning is evaluated using the same Q function as in current action selection policy, in noisy environments Q-learning can sometimes overestimate the action values, slowing the learning. A variant called Double Q-learning was proposed to correct this. Double Q-learning[19] is an off-policy reinforcement learning algorithm, where a different policy is used for value evaluation than what is used to select the next action.
 
 In practice, two separate value functions are trained in a mutually symmetric fashion using separate experiences, Q_locla and Q_target. The double Q-learning update step is then as follows:
 
+![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_NvvRn59pz-D1iSkBWpuIxA.png)
+
 ## 4. Run experiments to measure agent performance.
 
 The average rewards along with the traning process show as following:
+
+![alt the average rewards](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/43a0fee1-2ed7-4947-abb6-b1f61a677289.png)
