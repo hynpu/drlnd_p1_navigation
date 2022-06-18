@@ -6,7 +6,7 @@ The project 1 solution for Udacity Deep Reinforcement Learning nano degree.
 
 * 1. download this repository
 * 2. install the requirements in a separate Anaconda environment: `pip install -r requirements.txt`
-* 3. run the solution file [*Solution.ipynb*](https://github.com/hynpu/drlnd_p1_navigation/blob/main/Solution.ipynb)
+* 3. run the solution file [*Navigation.ipynb*](https://github.com/hynpu/drlnd_p1_navigation/blob/main/Navigation.ipynb)
 
 # Goal
 For this project, train an agent to navigate (and collect bananas!) in a large, square world.
