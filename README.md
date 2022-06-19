@@ -17,7 +17,7 @@ A gif showing the navigation and collection of bananas.
 
 # Approach
 
-The project follows the following steps to build and train the agent using DQN.
+The project follows the following steps to build and train the agent using double DQN.
 ![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/reinforcement_learning_diagram.jpg)
 
 ## 1. The state and action space of this environment
@@ -56,11 +56,11 @@ Once this cell is executed, you will watch the agent's performance, if it select
     print("Score: {}".format(score))
 
 
-## 3. Implement the DQN algo to train the agent
+## 3. Implement the double DQN algo to train the agent
 
 The DeepMind system used a deep convolutional neural network, with layers of tiled convolutional filters to mimic the effects of receptive fields. Reinforcement learning is unstable or divergent when a nonlinear function approximator such as a neural network is used to represent Q. This instability comes from the correlations present in the sequence of observations, the fact that small updates to Q may significantly change the policy of the agent and the data distribution, and the correlations between Q and the target values.
 
-![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_nm0lt3oobxdBHTMACUZ-cg.png)
+![alt the diagrame of double DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_nm0lt3oobxdBHTMACUZ-cg.png)
 
 The technique used experience replay, a biologically inspired mechanism that uses a random sample of prior actions instead of the most recent action to proceed. This removes correlations in the observation sequence and smooths changes in the data distribution. Iterative updates adjust Q towards target values that are only periodically updated, further reducing correlations with the target.
 
@@ -68,7 +68,7 @@ Because the future maximum approximated action value in Q-learning is evaluated 
 
 In practice, two separate value functions are trained in a mutually symmetric fashion using separate experiences, Q_locla and Q_target. The double Q-learning update step is then as follows:
 
-![alt the diagrame of DQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_NvvRn59pz-D1iSkBWpuIxA.png)
+![alt the diagrame of vDQN](https://github.com/hynpu/drlnd_p1_navigation/blob/main/images/1_NvvRn59pz-D1iSkBWpuIxA.png)
 
 ## 4. Run experiments to measure agent performance.
 
